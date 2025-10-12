@@ -1,27 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coming Soon</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coming Soon - Infrabyte IT System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1d3557, #457b9d, #a8dadc);
+      color: #ffffff;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
-      flex-direction: column;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
     }
+
+    .container {
+      max-width: 600px;
+    }
+
     h1 {
-      font-size: 2rem;
-      color: #333;
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .animation {
+      width: 250px;
+      margin: 20px auto;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .animation {
+        width: 180px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>We're building our website.<br>We'll be online soon!</h1>
+  <div class="container">
+    <!-- Lottie Animation -->
+    <div class="animation">
+      <lottie-player 
+        src="https://assets6.lottiefiles.com/packages/lf20_touohxv0.json"
+        background="transparent"
+        speed="1"  
+        style="width: 100%; height: auto;" 
+        loop 
+        autoplay>
+      </lottie-player>
+    </div>
+    
+    <h1>We're Launching Soon!</h1>
+    <p>Our website is under construction. We’ll be live shortly. Stay tuned!</p>
+  </div>
+
+  <!-- Lottie Player Script -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
 </html>
