@@ -308,9 +308,8 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('');
-    const token = process.env.REACT_APP_WEB3_TOKEN;
     const formDataToSend = new FormData();
-    formDataToSend.append('access_key', token); // Get from web3forms.com
+    formDataToSend.append('access_key',  import.meta.env.VITE_WEB3_TOKEN); // Get from web3forms.com
     formDataToSend.append('name', formData.name);
     formDataToSend.append('email', formData.email);
     formDataToSend.append('phone', formData.phone);

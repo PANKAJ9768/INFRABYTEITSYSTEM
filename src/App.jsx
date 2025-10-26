@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components';
+import { GlobalStyle } from './styles/GlobalStyles.js'; // Fixed import path
 
 // Components
 import Navbar from './components/Navbar/Navbar.jsx';
@@ -23,29 +23,6 @@ import AIAutomations from './pages/AIAutomations.jsx';
 import WebHosting from './pages/WebHosting.jsx';
 import CustomSoftware from './pages/CustomSoftware.jsx';
 
-// Global Styles
-const GlobalStyle = createGlobalStyle`
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-`;
-
 export default function App() {
   return (
     <Router>
@@ -66,7 +43,7 @@ export default function App() {
           <Route path="/services/ai-automations" element={<AIAutomations />} />
           <Route path="/services/web-hosting" element={<WebHosting />} />
           <Route path="/services/custom-software" element={<CustomSoftware />} />
-          <Route path="/industries" element={<Industries />} />
+{/*           <Route path="/industries" element={<Industries />} /> */}
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
