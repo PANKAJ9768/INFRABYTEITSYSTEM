@@ -609,9 +609,9 @@ const techStack = [
 
         <div className="container">
           <HeroContent>
-            <div className="hero-badge">
+           {/*  <div className="hero-badge">
               🏆 Trusted by 500+ Companies Worldwide
-            </div>
+            </div> */}
             <HeroTitle>
               Empowering Businesses with <span className="highlight">Next-Gen</span> IT Solutions
             </HeroTitle>

@@ -26,7 +26,7 @@ import CustomSoftware from './pages/CustomSoftware.jsx';
 export default function App() {
   return (
     <Router>
-      <GlobalStyle />
+{/*       <GlobalStyle /> */}
       <Analytics />
       <div className="App">
         <Navbar />

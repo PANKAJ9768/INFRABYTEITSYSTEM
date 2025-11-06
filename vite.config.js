@@ -4,17 +4,14 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
+  base: '/', // Change this if deploying to subdirectory
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
   server: {
-    fs: {
-      strict: false
-    }
-  },
-  build: {
-    outDir: 'dist'
+    port: 3000,
+    strictPort: false,
   }
 })
