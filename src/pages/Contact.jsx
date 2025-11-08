@@ -161,6 +161,7 @@ const FormGroup = styled.div`
     font-family: inherit;
     transition: all 0.3s ease;
     background: #f8f9fa;
+    color: #2c3e50;
 
     &:focus {
       outline: none;
@@ -372,7 +373,6 @@ const InfoItem = styled.div`
     }
   }
 `;
-
 const MapSection = styled.div`
   background: white;
   padding: 3rem;
@@ -421,6 +421,7 @@ const MapSection = styled.div`
   }
 `;
 
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -451,7 +452,7 @@ const Contact = () => {
     try {
       // Prepare form data for Web3Forms
       const formPayload = {
-        access_key:  import.meta.env.VITE_WEB3_TOKEN, // Replace with your Web3Forms access key
+        access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // Replace with your Web3Forms access key
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
@@ -568,7 +569,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+91 12345 67890"
+                    placeholder="+91 82992 34751"
                     required
                     disabled={isSubmitting}
                   />
@@ -672,7 +673,7 @@ const Contact = () => {
               </InfoItem>
               <InfoItem>
                 <span className="label">Available:</span>
-                <span className="value">Mon-Sat, 9:00 AM - 7:00 PM</span>
+                <span className="value">Mon-Sat, 9:00 AM - 7:00 PM IST</span>
               </InfoItem>
               <InfoItem>
                 <span className="label">Email:</span>
@@ -689,14 +690,19 @@ const Contact = () => {
         </ContentGrid>
 
         <MapSection>
-          <h2>Find Us On Map</h2>
+          <h2>Visit Us On Map</h2>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.3748745!2d72.8286!3d19.1356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDA4JzA4LjIiTiA3MsKwNDknNDMuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
-            allowFullScreen
+            width="100%"
+            height="500"
+            style={{ border: 0 }}
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6339.474000779027!2d72.84966865312768!3d19.130727057356765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b62b2069bae7%3A0x3cecc6f1fbbd723e!2sRathod%20Niwas%2C%20Saraswati%20Baug%2C%20Natwar%20Nagar%2C%20Jogeshwari%20East%2C%20Mumbai%2C%20Maharashtra%20400060!5e0!3m2!1sen!2sin!4v1762629561531!5m2!1sen!2sin"
+            allowFullScreen=""
             loading="lazy"
-            title="InfraByte IT Solutions Location"
-          ></iframe>
+            referrerPolicy="no-referrer-when-downgrade"
+            title="InfraByte IT Solutions Location - Jogeshwari, Mumbai">
+          </iframe>
         </MapSection>
+
       </Container>
     </ContactContainer>
   );
