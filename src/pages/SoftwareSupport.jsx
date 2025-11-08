@@ -14,7 +14,7 @@ const PageContainer = styled.div`
 `;
 
 const HeroSection = styled.section`
-  background: linear-gradient(135deg, #9C27B0 0%, #673AB7 100%);
+  background: linear-gradient(135deg, #607D8B 0%, #455A64 100%);
   padding: 120px 0;
   color: white;
   text-align: center;
@@ -156,13 +156,13 @@ const Card = styled.div`
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(135deg, #9C27B0 0%, #673AB7 100%);
+    background: linear-gradient(135deg, #607D8B 0%, #455A64 100%);
   }
 
   &:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(156, 39, 176, 0.2);
-    border-color: #673AB7;
+    box-shadow: 0 20px 50px rgba(96, 125, 139, 0.2);
+    border-color: #455A64;
   }
 
   @media (max-width: 768px) {
@@ -204,7 +204,7 @@ const FeatureList = styled.ul`
       content: '✓';
       position: absolute;
       left: 0;
-      color: #673AB7;
+      color: #455A64;
       font-weight: bold;
       font-size: 1.2rem;
     }
@@ -232,7 +232,7 @@ const StepNumber = styled.div`
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #9C27B0 0%, #673AB7 100%);
+  background: linear-gradient(135deg, #607D8B 0%, #455A64 100%);
   color: white;
   display: flex;
   align-items: center;
@@ -266,7 +266,7 @@ const StepContent = styled.div`
 `;
 
 const CTASection = styled.div`
-  background: linear-gradient(135deg, #9C27B0 0%, #673AB7 100%);
+  background: linear-gradient(135deg, #607D8B 0%, #455A64 100%);
   padding: 4rem;
   border-radius: 20px;
   color: white;
@@ -300,7 +300,7 @@ const CTASection = styled.div`
 const CTAButton = styled(Link)`
   display: inline-block;
   background: white;
-  color: #673AB7;
+  color: #455A64;
   padding: 14px 40px;
   border-radius: 50px;
   text-decoration: none;
@@ -364,80 +364,80 @@ const RelatedServiceCard = styled(Link)`
   }
 `;
 
-const CustomSoftware = () => {
+const SoftwareSupport = () => {
   return (
     <PageContainer>
       <HeroSection>
         <Container>
-          <h1>Custom Software Development</h1>
-          <p>Tailored software solutions built from the ground up to meet your unique business requirements</p>
+          <h1>Software Maintenance & Support</h1>
+          <p>Ongoing maintenance, updates, and dedicated technical support for your software applications</p>
         </Container>
       </HeroSection>
 
       <Section>
         <Container>
-          <SectionTitle>Bespoke Software Solutions</SectionTitle>
+          <SectionTitle>Comprehensive Software Support</SectionTitle>
           <SectionDescription>
-            Off-the-shelf software doesn't always fit your unique business needs. Our custom software development
-            services deliver tailored applications designed specifically for your business processes and requirements.
-            From web applications and mobile apps to enterprise systems, we build scalable, maintainable software that
-            drives your business forward.
+            Software applications require ongoing maintenance and support to stay secure, performant, and compatible
+            with evolving technology. Our software maintenance and support services ensure your applications run smoothly,
+            remain secure, and meet evolving business requirements. We handle bug fixes, updates, performance optimization,
+            and provide expert technical support when you need it.
           </SectionDescription>
 
           <Grid>
             <Card>
-              <CardIcon>🌐</CardIcon>
-              <CardTitle>Web Application Development</CardTitle>
+              <CardIcon>🔧</CardIcon>
+              <CardTitle>Bug Fixes & Updates</CardTitle>
               <CardContent>
-                Build modern, responsive web applications with cutting-edge technologies and frameworks.
+                Identify and fix bugs, apply patches, and release regular updates for stability.
               </CardContent>
               <FeatureList>
-                <li>Frontend development (React, Vue, Angular)</li>
-                <li>Backend development (Node.js, Python, Java)</li>
-                <li>Database design and optimization</li>
-                <li>API development and integration</li>
+                <li>Bug identification and resolution</li>
+                <li>Security patches</li>
+                <li>Regular updates and releases</li>
+                <li>Version management</li>
               </FeatureList>
             </Card>
 
             <Card>
-              <CardIcon>📱</CardIcon>
-              <CardTitle>Mobile App Development</CardTitle>
+              <CardIcon>⚡</CardIcon>
+              <CardTitle>Performance Optimization</CardTitle>
               <CardContent>
-                Native and cross-platform mobile applications for iOS and Android platforms.
+                Optimize application performance and address performance issues.
               </CardContent>
               <FeatureList>
-                <li>Native iOS development (Swift)</li>
-                <li>Native Android development (Kotlin)</li>
-                <li>Cross-platform development (React Native)</li>
-                <li>App store deployment and optimization</li>
+                <li>Performance analysis</li>
+                <li>Code optimization</li>
+                <li>Database tuning</li>
+                <li>Infrastructure scaling</li>
               </FeatureList>
             </Card>
 
             <Card>
-              <CardIcon>🏢</CardIcon>
-              <CardTitle>Enterprise Software Solutions</CardTitle>
+              <CardIcon>📞</CardIcon>
+              <CardTitle>24/7 Technical Support</CardTitle>
               <CardContent>
-                Large-scale enterprise applications for complex business processes and workflows.
+                Expert technical support available round-the-clock for critical issues.
               </CardContent>
               <FeatureList>
-                <li>Enterprise architecture design</li>
-                <li>Scalability and performance optimization</li>
-                <li>Integration with legacy systems</li>
-                <li>Enterprise security and compliance</li>
+                <li>24/7 helpdesk support</li>
+                <li>Priority incident response</li>
+                <li>Remote assistance</li>
+                <li>Escalation procedures</li>
               </FeatureList>
             </Card>
 
             <Card>
-              <CardIcon>⚙️</CardIcon>
-              <CardTitle>API Development & Integration</CardTitle>
+              <CardIcon>📊</CardIcon>
+              <CardTitle>Monitoring & Analytics</CardTitle>
               <CardContent>
-                RESTful and GraphQL APIs for seamless system integration and data exchange.
+                Continuous monitoring and analytics to track application health and usage.
               </CardContent>
               <FeatureList>
-                <li>REST API design and development</li>
-                <li>GraphQL implementation</li>
-                <li>Third-party API integration</li>
-                <li>API security and authentication</li>
+                <li>Application monitoring</li>
+                <li>Performance metrics</li>
+                <li>Usage analytics</li>
+                <li>Alert management</li>
               </FeatureList>
             </Card>
           </Grid>
@@ -446,18 +446,18 @@ const CustomSoftware = () => {
 
       <Section style={{ background: '#f8f9fa' }}>
         <Container>
-          <SectionTitle>Our Development Process</SectionTitle>
+          <SectionTitle>Support & Maintenance Process</SectionTitle>
           <SectionDescription>
-            We follow a proven, agile development methodology to deliver quality software on time
+            We provide comprehensive support with defined service levels
           </SectionDescription>
 
           <ProcessStep>
             <StepNumber>1</StepNumber>
             <StepContent>
-              <h4>Discovery & Requirements</h4>
+              <h4>Onboarding & Documentation</h4>
               <p>
-                We work closely with your team to understand your business needs, user requirements, and project goals.
-                We conduct workshops and document detailed specifications.
+                Understand your application, set up monitoring, and document known issues and procedures. We establish
+                SLAs and support channels.
               </p>
             </StepContent>
           </ProcessStep>
@@ -465,10 +465,10 @@ const CustomSoftware = () => {
           <ProcessStep>
             <StepNumber>2</StepNumber>
             <StepContent>
-              <h4>Design & Architecture</h4>
+              <h4>Proactive Monitoring</h4>
               <p>
-                Design scalable, maintainable software architecture. We create wireframes, mockups, and technical
-                specifications to align all stakeholders.
+                Continuously monitor your application for issues. We identify problems early and address them before
+                they impact users.
               </p>
             </StepContent>
           </ProcessStep>
@@ -476,10 +476,10 @@ const CustomSoftware = () => {
           <ProcessStep>
             <StepNumber>3</StepNumber>
             <StepContent>
-              <h4>Development & Iteration</h4>
+              <h4>Reactive Support</h4>
               <p>
-                Develop software using agile methodology with regular sprints and demos. We maintain continuous
-                communication and gather feedback throughout development.
+                Respond quickly to issues and provide expert technical support. We troubleshoot problems, implement
+                fixes, and restore normal operations.
               </p>
             </StepContent>
           </ProcessStep>
@@ -487,21 +487,10 @@ const CustomSoftware = () => {
           <ProcessStep>
             <StepNumber>4</StepNumber>
             <StepContent>
-              <h4>Testing & Quality Assurance</h4>
+              <h4>Continuous Improvement</h4>
               <p>
-                Comprehensive testing including unit tests, integration tests, and user acceptance testing. We ensure
-                software quality and reliability.
-              </p>
-            </StepContent>
-          </ProcessStep>
-
-          <ProcessStep>
-            <StepNumber>5</StepNumber>
-            <StepContent>
-              <h4>Deployment & Support</h4>
-              <p>
-                Deploy to production with proper planning and testing. We provide post-launch support, monitoring,
-                and ongoing maintenance.
+                Regular updates, patches, and optimizations. We suggest improvements based on usage patterns and
+                technology trends.
               </p>
             </StepContent>
           </ProcessStep>
@@ -510,87 +499,63 @@ const CustomSoftware = () => {
 
       <Section>
         <Container>
-          <SectionTitle>Technology Stack & Expertise</SectionTitle>
+          <SectionTitle>Support Packages & SLAs</SectionTitle>
 
           <Grid>
             <Card>
-              <CardTitle>Frontend Technologies</CardTitle>
+              <CardIcon>⭐</CardIcon>
+              <CardTitle>Basic Support</CardTitle>
+              <CardContent>
+                Essential support for stable production applications.
+              </CardContent>
               <FeatureList>
-                <li>React.js & React Native</li>
-                <li>Vue.js</li>
-                <li>Angular</li>
-                <li>HTML5, CSS3, JavaScript</li>
+                <li>Business hours support</li>
+                <li>Bug fixes and patches</li>
+                <li>Monthly updates</li>
+                <li>Basic monitoring</li>
               </FeatureList>
             </Card>
 
             <Card>
-              <CardTitle>Backend Technologies</CardTitle>
+              <CardIcon>⭐⭐</CardIcon>
+              <CardTitle>Standard Support</CardTitle>
+              <CardContent>
+                Comprehensive support with extended hours coverage.
+              </CardContent>
               <FeatureList>
-                <li>Node.js</li>
-                <li>Python (Django, Flask, FastAPI)</li>
-                <li>Java (Spring Boot)</li>
-                <li>.NET Core</li>
+                <li>Extended hours support</li>
+                <li>1-hour response time</li>
+                <li>Weekly updates</li>
+                <li>Performance monitoring</li>
               </FeatureList>
             </Card>
 
             <Card>
-              <CardTitle>Databases</CardTitle>
+              <CardIcon>⭐⭐⭐</CardIcon>
+              <CardTitle>Premium Support</CardTitle>
+              <CardContent>
+                24/7 premium support for mission-critical applications.
+              </CardContent>
               <FeatureList>
-                <li>PostgreSQL & MySQL</li>
-                <li>MongoDB</li>
-                <li>Redis</li>
-                <li>Elasticsearch</li>
+                <li>24/7/365 support</li>
+                <li>15-minute response time</li>
+                <li>Continuous updates</li>
+                <li>Advanced monitoring & analytics</li>
               </FeatureList>
             </Card>
 
             <Card>
-              <CardTitle>DevOps & Cloud</CardTitle>
+              <CardIcon>🎯</CardIcon>
+              <CardTitle>Custom Support</CardTitle>
+              <CardContent>
+                Tailored support packages for unique requirements.
+              </CardContent>
               <FeatureList>
-                <li>Docker & Kubernetes</li>
-                <li>AWS, Azure, GCP</li>
-                <li>CI/CD Pipelines</li>
-                <li>Cloud deployment & optimization</li>
+                <li>Custom SLAs</li>
+                <li>Dedicated resources</li>
+                <li>Custom monitoring</li>
+                <li>Strategic planning</li>
               </FeatureList>
-            </Card>
-          </Grid>
-        </Container>
-      </Section>
-
-      <Section>
-        <Container>
-          <SectionTitle>Development Services</SectionTitle>
-
-          <Grid>
-            <Card>
-              <CardIcon>🚀</CardIcon>
-              <CardTitle>MVP Development</CardTitle>
-              <CardContent>
-                Quickly validate your business idea with a minimum viable product. We help you get to market fast.
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardIcon>🔄</CardIcon>
-              <CardTitle>App Modernization</CardTitle>
-              <CardContent>
-                Refactor and modernize legacy applications with new technologies and architectures.
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardIcon>🧪</CardIcon>
-              <CardTitle>QA & Testing</CardTitle>
-              <CardContent>
-                Comprehensive quality assurance and testing to ensure software reliability and performance.
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardIcon>📚</CardIcon>
-              <CardTitle>Documentation & Training</CardTitle>
-              <CardContent>
-                Complete technical documentation and user training for smooth adoption and operation.
-              </CardContent>
             </Card>
           </Grid>
         </Container>
@@ -599,32 +564,32 @@ const CustomSoftware = () => {
       <Section>
         <Container>
           <CTASection>
-            <h3>Build Your Custom Software Solution</h3>
+            <h3>Get Professional Software Support Today</h3>
             <p>
-              Let our experienced development team bring your software vision to life. Schedule a consultation to
-              discuss your project requirements and technology needs.
+              Don't let application issues disrupt your business. Get professional support and maintenance for your
+              critical software applications. Contact us to discuss your support needs.
             </p>
             <CTAButton to="/contact">
-              Start Your Project →
+              Discuss Support Options →
             </CTAButton>
           </CTASection>
 
           <div style={{ marginTop: '4rem' }}>
             <SectionTitle style={{ marginBottom: '2rem' }}>Explore Other Services</SectionTitle>
             <RelatedServices>
-              <RelatedServiceCard to="/services/cloud-services">
-                <h4>Cloud & DevOps</h4>
-                <p>Deploy your custom applications on cloud infrastructure with DevOps</p>
+              <RelatedServiceCard to="/services/custom-software">
+                <h4>Custom Software</h4>
+                <p>Development of new custom applications for your business</p>
               </RelatedServiceCard>
 
-              <RelatedServiceCard to="/services/digital-transformation">
-                <h4>Digital Transformation</h4>
-                <p>Transform your business with custom digital solutions</p>
+              <RelatedServiceCard to="/services/saas-solutions">
+                <h4>SaaS Solutions</h4>
+                <p>Cloud-based software with built-in support and updates</p>
               </RelatedServiceCard>
 
-              <RelatedServiceCard to="/services/ai-automations">
-                <h4>AI & Automations</h4>
-                <p>Integrate AI capabilities into your custom applications</p>
+              <RelatedServiceCard to="/services/managed-services">
+                <h4>Managed Services</h4>
+                <p>Comprehensive IT infrastructure support and management</p>
               </RelatedServiceCard>
             </RelatedServices>
           </div>
@@ -634,4 +599,4 @@ const CustomSoftware = () => {
   );
 };
 
-export default CustomSoftware;
+export default SoftwareSupport;

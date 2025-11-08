@@ -14,7 +14,7 @@ const PageContainer = styled.div`
 `;
 
 const HeroSection = styled.section`
-  background: linear-gradient(135deg, #9C27B0 0%, #673AB7 100%);
+  background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
   padding: 120px 0;
   color: white;
   text-align: center;
@@ -156,13 +156,13 @@ const Card = styled.div`
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(135deg, #9C27B0 0%, #673AB7 100%);
+    background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
   }
 
   &:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(156, 39, 176, 0.2);
-    border-color: #673AB7;
+    box-shadow: 0 20px 50px rgba(76, 175, 80, 0.2);
+    border-color: #388E3C;
   }
 
   @media (max-width: 768px) {
@@ -204,7 +204,7 @@ const FeatureList = styled.ul`
       content: '✓';
       position: absolute;
       left: 0;
-      color: #673AB7;
+      color: #388E3C;
       font-weight: bold;
       font-size: 1.2rem;
     }
@@ -232,7 +232,7 @@ const StepNumber = styled.div`
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #9C27B0 0%, #673AB7 100%);
+  background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
   color: white;
   display: flex;
   align-items: center;
@@ -266,7 +266,7 @@ const StepContent = styled.div`
 `;
 
 const CTASection = styled.div`
-  background: linear-gradient(135deg, #9C27B0 0%, #673AB7 100%);
+  background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
   padding: 4rem;
   border-radius: 20px;
   color: white;
@@ -300,7 +300,7 @@ const CTASection = styled.div`
 const CTAButton = styled(Link)`
   display: inline-block;
   background: white;
-  color: #673AB7;
+  color: #388E3C;
   padding: 14px 40px;
   border-radius: 50px;
   text-decoration: none;
@@ -364,80 +364,80 @@ const RelatedServiceCard = styled(Link)`
   }
 `;
 
-const CustomSoftware = () => {
+const SaasSolutions = () => {
   return (
     <PageContainer>
       <HeroSection>
         <Container>
-          <h1>Custom Software Development</h1>
-          <p>Tailored software solutions built from the ground up to meet your unique business requirements</p>
+          <h1>SaaS Solutions</h1>
+          <p>Cloud-based software-as-a-service solutions for modern, scalable business applications</p>
         </Container>
       </HeroSection>
 
       <Section>
         <Container>
-          <SectionTitle>Bespoke Software Solutions</SectionTitle>
+          <SectionTitle>Software as a Service (SaaS)</SectionTitle>
           <SectionDescription>
-            Off-the-shelf software doesn't always fit your unique business needs. Our custom software development
-            services deliver tailored applications designed specifically for your business processes and requirements.
-            From web applications and mobile apps to enterprise systems, we build scalable, maintainable software that
-            drives your business forward.
+            SaaS applications have revolutionized how businesses access and use software. Our SaaS solutions provide
+            cloud-based applications accessible from anywhere, with automatic updates, no infrastructure management,
+            and flexible pricing. We build scalable, multi-tenant SaaS applications that serve multiple customers while
+            maintaining data isolation, security, and performance. Focus on your business while we handle the technology.
           </SectionDescription>
 
           <Grid>
             <Card>
+              <CardIcon>☁️</CardIcon>
+              <CardTitle>Multi-Tenant Architecture</CardTitle>
+              <CardContent>
+                Scalable SaaS architecture that serves multiple customers efficiently.
+              </CardContent>
+              <FeatureList>
+                <li>Multi-tenant data isolation</li>
+                <li>Tenant management</li>
+                <li>Resource optimization</li>
+                <li>Scalable infrastructure</li>
+              </FeatureList>
+            </Card>
+
+            <Card>
+              <CardIcon>💰</CardIcon>
+              <CardTitle>Subscription Management</CardTitle>
+              <CardContent>
+                Complete subscription and billing management for your SaaS business.
+              </CardContent>
+              <FeatureList>
+                <li>Flexible pricing models</li>
+                <li>Automated billing</li>
+                <li>Usage-based pricing</li>
+                <li>Payment processing</li>
+              </FeatureList>
+            </Card>
+
+            <Card>
               <CardIcon>🌐</CardIcon>
-              <CardTitle>Web Application Development</CardTitle>
+              <CardTitle>Cloud Deployment</CardTitle>
               <CardContent>
-                Build modern, responsive web applications with cutting-edge technologies and frameworks.
+                Deploy SaaS applications on reliable cloud infrastructure with high availability.
               </CardContent>
               <FeatureList>
-                <li>Frontend development (React, Vue, Angular)</li>
-                <li>Backend development (Node.js, Python, Java)</li>
-                <li>Database design and optimization</li>
-                <li>API development and integration</li>
+                <li>Multi-region deployment</li>
+                <li>Auto-scaling</li>
+                <li>High availability</li>
+                <li>Disaster recovery</li>
               </FeatureList>
             </Card>
 
             <Card>
-              <CardIcon>📱</CardIcon>
-              <CardTitle>Mobile App Development</CardTitle>
+              <CardIcon>⚡</CardIcon>
+              <CardTitle>Performance & Security</CardTitle>
               <CardContent>
-                Native and cross-platform mobile applications for iOS and Android platforms.
+                Optimize performance and implement comprehensive security for your SaaS platform.
               </CardContent>
               <FeatureList>
-                <li>Native iOS development (Swift)</li>
-                <li>Native Android development (Kotlin)</li>
-                <li>Cross-platform development (React Native)</li>
-                <li>App store deployment and optimization</li>
-              </FeatureList>
-            </Card>
-
-            <Card>
-              <CardIcon>🏢</CardIcon>
-              <CardTitle>Enterprise Software Solutions</CardTitle>
-              <CardContent>
-                Large-scale enterprise applications for complex business processes and workflows.
-              </CardContent>
-              <FeatureList>
-                <li>Enterprise architecture design</li>
-                <li>Scalability and performance optimization</li>
-                <li>Integration with legacy systems</li>
-                <li>Enterprise security and compliance</li>
-              </FeatureList>
-            </Card>
-
-            <Card>
-              <CardIcon>⚙️</CardIcon>
-              <CardTitle>API Development & Integration</CardTitle>
-              <CardContent>
-                RESTful and GraphQL APIs for seamless system integration and data exchange.
-              </CardContent>
-              <FeatureList>
-                <li>REST API design and development</li>
-                <li>GraphQL implementation</li>
-                <li>Third-party API integration</li>
-                <li>API security and authentication</li>
+                <li>Load balancing</li>
+                <li>CDN integration</li>
+                <li>Data encryption</li>
+                <li>Compliance monitoring</li>
               </FeatureList>
             </Card>
           </Grid>
@@ -446,18 +446,18 @@ const CustomSoftware = () => {
 
       <Section style={{ background: '#f8f9fa' }}>
         <Container>
-          <SectionTitle>Our Development Process</SectionTitle>
+          <SectionTitle>SaaS Development & Launch</SectionTitle>
           <SectionDescription>
-            We follow a proven, agile development methodology to deliver quality software on time
+            We help you build and launch successful SaaS applications
           </SectionDescription>
 
           <ProcessStep>
             <StepNumber>1</StepNumber>
             <StepContent>
-              <h4>Discovery & Requirements</h4>
+              <h4>Idea & Planning</h4>
               <p>
-                We work closely with your team to understand your business needs, user requirements, and project goals.
-                We conduct workshops and document detailed specifications.
+                Validate your SaaS idea and develop a comprehensive go-to-market strategy. We help you identify
+                market opportunities and define your product roadmap.
               </p>
             </StepContent>
           </ProcessStep>
@@ -465,10 +465,10 @@ const CustomSoftware = () => {
           <ProcessStep>
             <StepNumber>2</StepNumber>
             <StepContent>
-              <h4>Design & Architecture</h4>
+              <h4>Platform Development</h4>
               <p>
-                Design scalable, maintainable software architecture. We create wireframes, mockups, and technical
-                specifications to align all stakeholders.
+                Build your SaaS platform with scalable, secure architecture. We implement multi-tenant capabilities,
+                subscription management, and advanced features.
               </p>
             </StepContent>
           </ProcessStep>
@@ -476,10 +476,10 @@ const CustomSoftware = () => {
           <ProcessStep>
             <StepNumber>3</StepNumber>
             <StepContent>
-              <h4>Development & Iteration</h4>
+              <h4>Launch & Onboarding</h4>
               <p>
-                Develop software using agile methodology with regular sprints and demos. We maintain continuous
-                communication and gather feedback throughout development.
+                Launch your SaaS application with customer onboarding, documentation, and training. We ensure a smooth
+                go-live and customer success.
               </p>
             </StepContent>
           </ProcessStep>
@@ -487,21 +487,10 @@ const CustomSoftware = () => {
           <ProcessStep>
             <StepNumber>4</StepNumber>
             <StepContent>
-              <h4>Testing & Quality Assurance</h4>
+              <h4>Growth & Optimization</h4>
               <p>
-                Comprehensive testing including unit tests, integration tests, and user acceptance testing. We ensure
-                software quality and reliability.
-              </p>
-            </StepContent>
-          </ProcessStep>
-
-          <ProcessStep>
-            <StepNumber>5</StepNumber>
-            <StepContent>
-              <h4>Deployment & Support</h4>
-              <p>
-                Deploy to production with proper planning and testing. We provide post-launch support, monitoring,
-                and ongoing maintenance.
+                Continuously optimize your SaaS platform based on user feedback and analytics. We implement new features
+                and improve user experience for growth.
               </p>
             </StepContent>
           </ProcessStep>
@@ -510,87 +499,63 @@ const CustomSoftware = () => {
 
       <Section>
         <Container>
-          <SectionTitle>Technology Stack & Expertise</SectionTitle>
+          <SectionTitle>SaaS Platform Benefits</SectionTitle>
 
           <Grid>
             <Card>
-              <CardTitle>Frontend Technologies</CardTitle>
+              <CardIcon>📈</CardIcon>
+              <CardTitle>Scalability & Growth</CardTitle>
+              <CardContent>
+                Scale your SaaS business without infrastructure limitations or operational overhead.
+              </CardContent>
               <FeatureList>
-                <li>React.js & React Native</li>
-                <li>Vue.js</li>
-                <li>Angular</li>
-                <li>HTML5, CSS3, JavaScript</li>
+                <li>Auto-scaling infrastructure</li>
+                <li>Global availability</li>
+                <li>Performance optimization</li>
+                <li>Cost efficiency at scale</li>
               </FeatureList>
             </Card>
 
             <Card>
-              <CardTitle>Backend Technologies</CardTitle>
+              <CardIcon>🔒</CardIcon>
+              <CardTitle>Security & Compliance</CardTitle>
+              <CardContent>
+                Enterprise-grade security to protect customer data and maintain compliance.
+              </CardContent>
               <FeatureList>
-                <li>Node.js</li>
-                <li>Python (Django, Flask, FastAPI)</li>
-                <li>Java (Spring Boot)</li>
-                <li>.NET Core</li>
+                <li>Data encryption</li>
+                <li>Access controls</li>
+                <li>Audit trails</li>
+                <li>Compliance certifications</li>
               </FeatureList>
             </Card>
 
             <Card>
-              <CardTitle>Databases</CardTitle>
+              <CardIcon>💰</CardIcon>
+              <CardTitle>Recurring Revenue Model</CardTitle>
+              <CardContent>
+                Build a sustainable business with predictable, recurring revenue streams.
+              </CardContent>
               <FeatureList>
-                <li>PostgreSQL & MySQL</li>
-                <li>MongoDB</li>
-                <li>Redis</li>
-                <li>Elasticsearch</li>
+                <li>Subscription billing</li>
+                <li>Usage-based pricing</li>
+                <li>Payment automation</li>
+                <li>Revenue analytics</li>
               </FeatureList>
             </Card>
 
             <Card>
-              <CardTitle>DevOps & Cloud</CardTitle>
+              <CardIcon>👥</CardIcon>
+              <CardTitle>Customer Success</CardTitle>
+              <CardContent>
+                Support tools and analytics to maximize customer satisfaction and retention.
+              </CardContent>
               <FeatureList>
-                <li>Docker & Kubernetes</li>
-                <li>AWS, Azure, GCP</li>
-                <li>CI/CD Pipelines</li>
-                <li>Cloud deployment & optimization</li>
+                <li>Customer onboarding</li>
+                <li>Usage analytics</li>
+                <li>Support infrastructure</li>
+                <li>Feature adoption tracking</li>
               </FeatureList>
-            </Card>
-          </Grid>
-        </Container>
-      </Section>
-
-      <Section>
-        <Container>
-          <SectionTitle>Development Services</SectionTitle>
-
-          <Grid>
-            <Card>
-              <CardIcon>🚀</CardIcon>
-              <CardTitle>MVP Development</CardTitle>
-              <CardContent>
-                Quickly validate your business idea with a minimum viable product. We help you get to market fast.
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardIcon>🔄</CardIcon>
-              <CardTitle>App Modernization</CardTitle>
-              <CardContent>
-                Refactor and modernize legacy applications with new technologies and architectures.
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardIcon>🧪</CardIcon>
-              <CardTitle>QA & Testing</CardTitle>
-              <CardContent>
-                Comprehensive quality assurance and testing to ensure software reliability and performance.
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardIcon>📚</CardIcon>
-              <CardTitle>Documentation & Training</CardTitle>
-              <CardContent>
-                Complete technical documentation and user training for smooth adoption and operation.
-              </CardContent>
             </Card>
           </Grid>
         </Container>
@@ -599,32 +564,32 @@ const CustomSoftware = () => {
       <Section>
         <Container>
           <CTASection>
-            <h3>Build Your Custom Software Solution</h3>
+            <h3>Build Your SaaS Application Today</h3>
             <p>
-              Let our experienced development team bring your software vision to life. Schedule a consultation to
-              discuss your project requirements and technology needs.
+              Let our SaaS experts help you build and launch a successful cloud-based application. From architecture to
+              launch, we've got you covered. Schedule a consultation now.
             </p>
             <CTAButton to="/contact">
-              Start Your Project →
+              Start Your SaaS Journey →
             </CTAButton>
           </CTASection>
 
           <div style={{ marginTop: '4rem' }}>
             <SectionTitle style={{ marginBottom: '2rem' }}>Explore Other Services</SectionTitle>
             <RelatedServices>
+              <RelatedServiceCard to="/services/custom-software">
+                <h4>Custom Software</h4>
+                <p>Tailored software development for your unique requirements</p>
+              </RelatedServiceCard>
+
               <RelatedServiceCard to="/services/cloud-services">
                 <h4>Cloud & DevOps</h4>
-                <p>Deploy your custom applications on cloud infrastructure with DevOps</p>
+                <p>Scalable cloud infrastructure for your SaaS platform</p>
               </RelatedServiceCard>
 
-              <RelatedServiceCard to="/services/digital-transformation">
-                <h4>Digital Transformation</h4>
-                <p>Transform your business with custom digital solutions</p>
-              </RelatedServiceCard>
-
-              <RelatedServiceCard to="/services/ai-automations">
-                <h4>AI & Automations</h4>
-                <p>Integrate AI capabilities into your custom applications</p>
+              <RelatedServiceCard to="/services/managed-services">
+                <h4>Managed Services</h4>
+                <p>24/7 support for your SaaS operations and infrastructure</p>
               </RelatedServiceCard>
             </RelatedServices>
           </div>
@@ -634,4 +599,4 @@ const CustomSoftware = () => {
   );
 };
 
-export default CustomSoftware;
+export default SaasSolutions;

@@ -14,7 +14,7 @@ const PageContainer = styled.div`
 `;
 
 const HeroSection = styled.section`
-  background: linear-gradient(135deg, #9C27B0 0%, #673AB7 100%);
+  background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
   padding: 120px 0;
   color: white;
   text-align: center;
@@ -156,13 +156,13 @@ const Card = styled.div`
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(135deg, #9C27B0 0%, #673AB7 100%);
+    background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
   }
 
   &:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(156, 39, 176, 0.2);
-    border-color: #673AB7;
+    box-shadow: 0 20px 50px rgba(255, 152, 0, 0.2);
+    border-color: #F57C00;
   }
 
   @media (max-width: 768px) {
@@ -204,7 +204,7 @@ const FeatureList = styled.ul`
       content: '✓';
       position: absolute;
       left: 0;
-      color: #673AB7;
+      color: #F57C00;
       font-weight: bold;
       font-size: 1.2rem;
     }
@@ -232,7 +232,7 @@ const StepNumber = styled.div`
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #9C27B0 0%, #673AB7 100%);
+  background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
   color: white;
   display: flex;
   align-items: center;
@@ -266,7 +266,7 @@ const StepContent = styled.div`
 `;
 
 const CTASection = styled.div`
-  background: linear-gradient(135deg, #9C27B0 0%, #673AB7 100%);
+  background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
   padding: 4rem;
   border-radius: 20px;
   color: white;
@@ -300,7 +300,7 @@ const CTASection = styled.div`
 const CTAButton = styled(Link)`
   display: inline-block;
   background: white;
-  color: #673AB7;
+  color: #F57C00;
   padding: 14px 40px;
   border-radius: 50px;
   text-decoration: none;
@@ -364,80 +364,80 @@ const RelatedServiceCard = styled(Link)`
   }
 `;
 
-const CustomSoftware = () => {
+const EnterpriseSoftware = () => {
   return (
     <PageContainer>
       <HeroSection>
         <Container>
-          <h1>Custom Software Development</h1>
-          <p>Tailored software solutions built from the ground up to meet your unique business requirements</p>
+          <h1>Enterprise Software Solutions</h1>
+          <p>Comprehensive enterprise systems for large-scale business operations and digital excellence</p>
         </Container>
       </HeroSection>
 
       <Section>
         <Container>
-          <SectionTitle>Bespoke Software Solutions</SectionTitle>
+          <SectionTitle>Enterprise-Grade Solutions</SectionTitle>
           <SectionDescription>
-            Off-the-shelf software doesn't always fit your unique business needs. Our custom software development
-            services deliver tailored applications designed specifically for your business processes and requirements.
-            From web applications and mobile apps to enterprise systems, we build scalable, maintainable software that
-            drives your business forward.
+            Enterprise software systems are complex, critical, and mission-essential. Our enterprise software solutions
+            are designed to handle the complexity of large organizations with thousands of users, multiple locations,
+            and intricate business processes. From ERP and CRM systems to business process management and integration
+            solutions, we deliver systems that support your entire organization's operations.
           </SectionDescription>
 
           <Grid>
             <Card>
-              <CardIcon>🌐</CardIcon>
-              <CardTitle>Web Application Development</CardTitle>
-              <CardContent>
-                Build modern, responsive web applications with cutting-edge technologies and frameworks.
-              </CardContent>
-              <FeatureList>
-                <li>Frontend development (React, Vue, Angular)</li>
-                <li>Backend development (Node.js, Python, Java)</li>
-                <li>Database design and optimization</li>
-                <li>API development and integration</li>
-              </FeatureList>
-            </Card>
-
-            <Card>
-              <CardIcon>📱</CardIcon>
-              <CardTitle>Mobile App Development</CardTitle>
-              <CardContent>
-                Native and cross-platform mobile applications for iOS and Android platforms.
-              </CardContent>
-              <FeatureList>
-                <li>Native iOS development (Swift)</li>
-                <li>Native Android development (Kotlin)</li>
-                <li>Cross-platform development (React Native)</li>
-                <li>App store deployment and optimization</li>
-              </FeatureList>
-            </Card>
-
-            <Card>
               <CardIcon>🏢</CardIcon>
-              <CardTitle>Enterprise Software Solutions</CardTitle>
+              <CardTitle>Enterprise Resource Planning (ERP)</CardTitle>
               <CardContent>
-                Large-scale enterprise applications for complex business processes and workflows.
+                Integrated ERP systems that unify finance, HR, supply chain, and operations.
               </CardContent>
               <FeatureList>
-                <li>Enterprise architecture design</li>
-                <li>Scalability and performance optimization</li>
-                <li>Integration with legacy systems</li>
-                <li>Enterprise security and compliance</li>
+                <li>Financial management</li>
+                <li>Human capital management</li>
+                <li>Supply chain optimization</li>
+                <li>Business analytics and reporting</li>
+              </FeatureList>
+            </Card>
+
+            <Card>
+              <CardIcon>📞</CardIcon>
+              <CardTitle>Customer Relationship Management (CRM)</CardTitle>
+              <CardContent>
+                Comprehensive CRM systems for managing customer interactions and relationships.
+              </CardContent>
+              <FeatureList>
+                <li>Sales management</li>
+                <li>Customer service and support</li>
+                <li>Marketing automation</li>
+                <li>Customer analytics</li>
               </FeatureList>
             </Card>
 
             <Card>
               <CardIcon>⚙️</CardIcon>
-              <CardTitle>API Development & Integration</CardTitle>
+              <CardTitle>Business Process Management (BPM)</CardTitle>
               <CardContent>
-                RESTful and GraphQL APIs for seamless system integration and data exchange.
+                Automate and optimize complex business processes across your enterprise.
               </CardContent>
               <FeatureList>
-                <li>REST API design and development</li>
-                <li>GraphQL implementation</li>
-                <li>Third-party API integration</li>
-                <li>API security and authentication</li>
+                <li>Workflow automation</li>
+                <li>Process optimization</li>
+                <li>Document management</li>
+                <li>Compliance automation</li>
+              </FeatureList>
+            </Card>
+
+            <Card>
+              <CardIcon>🔗</CardIcon>
+              <CardTitle>Enterprise Integration</CardTitle>
+              <CardContent>
+                Seamlessly integrate disparate systems and applications across your organization.
+              </CardContent>
+              <FeatureList>
+                <li>System integration</li>
+                <li>API management</li>
+                <li>Data synchronization</li>
+                <li>Master data management</li>
               </FeatureList>
             </Card>
           </Grid>
@@ -446,18 +446,18 @@ const CustomSoftware = () => {
 
       <Section style={{ background: '#f8f9fa' }}>
         <Container>
-          <SectionTitle>Our Development Process</SectionTitle>
+          <SectionTitle>Enterprise Implementation Approach</SectionTitle>
           <SectionDescription>
-            We follow a proven, agile development methodology to deliver quality software on time
+            We follow a proven methodology for large-scale enterprise system implementations
           </SectionDescription>
 
           <ProcessStep>
             <StepNumber>1</StepNumber>
             <StepContent>
-              <h4>Discovery & Requirements</h4>
+              <h4>Requirements & Strategy</h4>
               <p>
-                We work closely with your team to understand your business needs, user requirements, and project goals.
-                We conduct workshops and document detailed specifications.
+                Conduct comprehensive enterprise assessment. We understand your business model, processes, and
+                requirements across all departments and locations.
               </p>
             </StepContent>
           </ProcessStep>
@@ -465,10 +465,10 @@ const CustomSoftware = () => {
           <ProcessStep>
             <StepNumber>2</StepNumber>
             <StepContent>
-              <h4>Design & Architecture</h4>
+              <h4>Solution Design</h4>
               <p>
-                Design scalable, maintainable software architecture. We create wireframes, mockups, and technical
-                specifications to align all stakeholders.
+                Design enterprise architecture that aligns with your business strategy. We ensure scalability,
+                security, and compliance with industry standards.
               </p>
             </StepContent>
           </ProcessStep>
@@ -476,10 +476,10 @@ const CustomSoftware = () => {
           <ProcessStep>
             <StepNumber>3</StepNumber>
             <StepContent>
-              <h4>Development & Iteration</h4>
+              <h4>Implementation</h4>
               <p>
-                Develop software using agile methodology with regular sprints and demos. We maintain continuous
-                communication and gather feedback throughout development.
+                Execute phased implementation with minimal business disruption. We manage configuration, data
+                migration, and system integration across your enterprise.
               </p>
             </StepContent>
           </ProcessStep>
@@ -487,21 +487,10 @@ const CustomSoftware = () => {
           <ProcessStep>
             <StepNumber>4</StepNumber>
             <StepContent>
-              <h4>Testing & Quality Assurance</h4>
+              <h4>Optimization & Support</h4>
               <p>
-                Comprehensive testing including unit tests, integration tests, and user acceptance testing. We ensure
-                software quality and reliability.
-              </p>
-            </StepContent>
-          </ProcessStep>
-
-          <ProcessStep>
-            <StepNumber>5</StepNumber>
-            <StepContent>
-              <h4>Deployment & Support</h4>
-              <p>
-                Deploy to production with proper planning and testing. We provide post-launch support, monitoring,
-                and ongoing maintenance.
+                Post-implementation optimization, user training, and ongoing support. We ensure successful adoption
+                and continuous improvement.
               </p>
             </StepContent>
           </ProcessStep>
@@ -510,87 +499,63 @@ const CustomSoftware = () => {
 
       <Section>
         <Container>
-          <SectionTitle>Technology Stack & Expertise</SectionTitle>
+          <SectionTitle>Enterprise Solution Benefits</SectionTitle>
 
           <Grid>
             <Card>
-              <CardTitle>Frontend Technologies</CardTitle>
+              <CardIcon>📊</CardIcon>
+              <CardTitle>Unified Operations</CardTitle>
+              <CardContent>
+                Single source of truth for enterprise data and operations across all departments.
+              </CardContent>
               <FeatureList>
-                <li>React.js & React Native</li>
-                <li>Vue.js</li>
-                <li>Angular</li>
-                <li>HTML5, CSS3, JavaScript</li>
+                <li>Centralized data management</li>
+                <li>Consistent processes</li>
+                <li>Real-time visibility</li>
+                <li>Integrated reporting</li>
               </FeatureList>
             </Card>
 
             <Card>
-              <CardTitle>Backend Technologies</CardTitle>
+              <CardIcon>⚡</CardIcon>
+              <CardTitle>Operational Efficiency</CardTitle>
+              <CardContent>
+                Streamline processes and eliminate redundancies across your enterprise.
+              </CardContent>
               <FeatureList>
-                <li>Node.js</li>
-                <li>Python (Django, Flask, FastAPI)</li>
-                <li>Java (Spring Boot)</li>
-                <li>.NET Core</li>
+                <li>Process automation</li>
+                <li>Reduced manual work</li>
+                <li>Faster decision-making</li>
+                <li>Lower operational costs</li>
               </FeatureList>
             </Card>
 
             <Card>
-              <CardTitle>Databases</CardTitle>
+              <CardIcon>🔒</CardIcon>
+              <CardTitle>Governance & Compliance</CardTitle>
+              <CardContent>
+                Comprehensive controls for regulatory compliance and risk management.
+              </CardContent>
               <FeatureList>
-                <li>PostgreSQL & MySQL</li>
-                <li>MongoDB</li>
-                <li>Redis</li>
-                <li>Elasticsearch</li>
+                <li>Access controls</li>
+                <li>Audit trails</li>
+                <li>Compliance monitoring</li>
+                <li>Risk management</li>
               </FeatureList>
             </Card>
 
             <Card>
-              <CardTitle>DevOps & Cloud</CardTitle>
+              <CardIcon>📈</CardIcon>
+              <CardTitle>Business Insights</CardTitle>
+              <CardContent>
+                Advanced analytics and reporting for data-driven decision making.
+              </CardContent>
               <FeatureList>
-                <li>Docker & Kubernetes</li>
-                <li>AWS, Azure, GCP</li>
-                <li>CI/CD Pipelines</li>
-                <li>Cloud deployment & optimization</li>
+                <li>Business intelligence</li>
+                <li>Predictive analytics</li>
+                <li>Custom dashboards</li>
+                <li>Strategic insights</li>
               </FeatureList>
-            </Card>
-          </Grid>
-        </Container>
-      </Section>
-
-      <Section>
-        <Container>
-          <SectionTitle>Development Services</SectionTitle>
-
-          <Grid>
-            <Card>
-              <CardIcon>🚀</CardIcon>
-              <CardTitle>MVP Development</CardTitle>
-              <CardContent>
-                Quickly validate your business idea with a minimum viable product. We help you get to market fast.
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardIcon>🔄</CardIcon>
-              <CardTitle>App Modernization</CardTitle>
-              <CardContent>
-                Refactor and modernize legacy applications with new technologies and architectures.
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardIcon>🧪</CardIcon>
-              <CardTitle>QA & Testing</CardTitle>
-              <CardContent>
-                Comprehensive quality assurance and testing to ensure software reliability and performance.
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardIcon>📚</CardIcon>
-              <CardTitle>Documentation & Training</CardTitle>
-              <CardContent>
-                Complete technical documentation and user training for smooth adoption and operation.
-              </CardContent>
             </Card>
           </Grid>
         </Container>
@@ -599,32 +564,32 @@ const CustomSoftware = () => {
       <Section>
         <Container>
           <CTASection>
-            <h3>Build Your Custom Software Solution</h3>
+            <h3>Transform Your Enterprise Operations</h3>
             <p>
-              Let our experienced development team bring your software vision to life. Schedule a consultation to
-              discuss your project requirements and technology needs.
+              Let our enterprise software experts help you implement a comprehensive solution that unifies your
+              organization. Schedule a consultation to discuss your enterprise requirements.
             </p>
             <CTAButton to="/contact">
-              Start Your Project →
+              Schedule Enterprise Consultation →
             </CTAButton>
           </CTASection>
 
           <div style={{ marginTop: '4rem' }}>
             <SectionTitle style={{ marginBottom: '2rem' }}>Explore Other Services</SectionTitle>
             <RelatedServices>
+              <RelatedServiceCard to="/services/custom-software">
+                <h4>Custom Software</h4>
+                <p>Tailored enterprise applications for your specific needs</p>
+              </RelatedServiceCard>
+
               <RelatedServiceCard to="/services/cloud-services">
                 <h4>Cloud & DevOps</h4>
-                <p>Deploy your custom applications on cloud infrastructure with DevOps</p>
+                <p>Enterprise cloud infrastructure for your systems</p>
               </RelatedServiceCard>
 
               <RelatedServiceCard to="/services/digital-transformation">
                 <h4>Digital Transformation</h4>
-                <p>Transform your business with custom digital solutions</p>
-              </RelatedServiceCard>
-
-              <RelatedServiceCard to="/services/ai-automations">
-                <h4>AI & Automations</h4>
-                <p>Integrate AI capabilities into your custom applications</p>
+                <p>Strategic transformation with enterprise solutions</p>
               </RelatedServiceCard>
             </RelatedServices>
           </div>
@@ -634,4 +599,4 @@ const CustomSoftware = () => {
   );
 };
 
-export default CustomSoftware;
+export default EnterpriseSoftware;
