@@ -133,54 +133,6 @@ const HeroSubtitle = styled.p`
   }
 `;
 
-const HeroButtons = styled.div`
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  .btn-primary, .btn-secondary {
-    padding: 15px 30px;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-  }
-
-  .btn-primary {
-    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
-    color: white;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
-    }
-  }
-
-  .btn-secondary {
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    color: white;
-    border: 2px solid rgba(255,255,255,0.3);
-
-    &:hover {
-      background: rgba(255,255,255,0.2);
-      transform: translateY(-3px);
-    }
-  }
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-  }
-`;
-
 const Section = styled.section`
   padding: 100px 0;
   background: ${props => props.background || 'white'};
@@ -276,17 +228,6 @@ const StatCard = styled.div`
   }
 `;
 
-const ServicesGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-`;
 
 const ServiceCard = styled.div`
   background: white;
@@ -354,10 +295,105 @@ const ServiceCard = styled.div`
     }
   }
 `;
+// Add these updates to your existing Home.jsx styled components
+
+const HeroButtons = styled.div`
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+
+  .btn-primary, .btn-secondary {
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    min-height: 44px;
+    white-space: nowrap;
+  }
+
+  .btn-primary {
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+    }
+
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+
+  .btn-secondary {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    border: 2px solid rgba(255,255,255,0.3);
+
+    &:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-3px);
+    }
+
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .btn-primary, .btn-secondary {
+      width: 100%;
+      max-width: 280px;
+      padding: 16px 32px;
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .btn-primary, .btn-secondary {
+      max-width: 100%;
+      padding: 14px 24px;
+      font-size: 0.95rem;
+    }
+  }
+`;
+
+const ServicesGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+`;
 
 const TechStackSection = styled.div`
   text-align: center;
   margin: 4rem 0;
+  padding: 0 16px;
 
   .tech-categories {
     display: grid;
@@ -380,38 +416,44 @@ const TechStackSection = styled.div`
       padding-bottom: 0.5rem;
       border-bottom: 3px solid #667eea;
     }
-  }
 
-  .tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 1rem;
-  }
-
-  .tech-item {
-    padding: 1rem;
-    background: #f8f9fa;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-
-    &:hover {
-      transform: scale(1.05);
-      border-color: #667eea;
-      background: white;
-      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+      gap: 1rem;
     }
 
-    .tech-icon {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
+    .tech-item {
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      min-height: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
-    .tech-name {
-      font-weight: 600;
-      color: #2c3e50;
-      font-size: 0.85rem;
+      &:hover {
+        transform: scale(1.05);
+        border-color: #667eea;
+        background: white;
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+      }
+
+      .tech-icon {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      .tech-name {
+        font-weight: 600;
+        color: #2c3e50;
+        font-size: 0.85rem;
+        text-align: center;
+      }
     }
   }
 
@@ -421,9 +463,35 @@ const TechStackSection = styled.div`
       gap: 2rem;
     }
 
-    .tech-grid {
-      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    .tech-category .tech-grid {
+      grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
       gap: 0.75rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    margin: 2rem 0;
+
+    .tech-category {
+      padding: 1.5rem;
+
+      .tech-grid {
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+        gap: 0.5rem;
+      }
+
+      .tech-item {
+        padding: 0.75rem;
+        min-height: 70px;
+
+        .tech-icon {
+          font-size: 1.5rem;
+        }
+
+        .tech-name {
+          font-size: 0.75rem;
+        }
+      }
     }
   }
 `;

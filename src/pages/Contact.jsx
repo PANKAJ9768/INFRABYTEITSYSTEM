@@ -1,340 +1,509 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 
 const ContactContainer = styled.div`
   margin-top: 80px;
-  padding: 60px 0;
-`;
-
-const HeroSection = styled.section`
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 80px 0;
-  color: white;
-  text-align: center;
-  margin-bottom: 60px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: calc(100vh - 80px);
 
   @media (max-width: 768px) {
     padding: 60px 0;
+  }
+`;
+
+const Container = styled.div`
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+
+  @media (max-width: 1280px) {
+    padding: 0 30px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 16px;
+  }
+`;
+
+const HeroSection = styled.section`
+  text-align: center;
+  margin-bottom: 60px;
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 1.3rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 1280px) {
+    h1 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+`;
+
+const ContentGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 60px;
+
+  @media (max-width: 1280px) {
+    gap: 3rem;
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    gap: 2rem;
     margin-bottom: 40px;
   }
 `;
 
-const ContactGrid = styled.div`
+const FormSection = styled.div`
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.05);
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 1280px) {
+    padding: 2.5rem;
+
+    h2 {
+      font-size: 1.75rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+`;
+
+const FormRow = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  margin-bottom: 4rem;
+  gap: 1.5rem;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.25rem;
   }
 `;
 
-const ContactInfo = styled.div`
-  .info-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    margin-bottom: 2rem;
-    border-left: 4px solid #667eea;
-  }
-
-  .info-title {
-    color: #2c3e50;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-
-  .contact-item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 1rem;
-
-    .icon {
-      margin-right: 0.75rem;
-      margin-top: 0.25rem;
-      font-size: 1.1rem;
-      color: #667eea;
-    }
-
-    .content {
-      flex: 1;
-
-      strong {
-        color: #2c3e50;
-        display: block;
-        margin-bottom: 0.25rem;
-      }
-
-      p {
-        color: #666;
-        margin: 0;
-        line-height: 1.6;
-      }
-    }
-  }
-`;
-
-const SocialMediaCard = styled.div`
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-  border-left: 4px solid #667eea;
-
-  .find-us-title {
-    color: #2c3e50;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-
-    .globe-icon {
-      margin-right: 0.5rem;
-    }
-  }
-
-  .get-in-touch {
-    color: #666;
-    margin-bottom: 1.5rem;
-    font-style: italic;
-  }
-
-  .contact-section {
-    background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-
-      .contact-icon {
-        margin-right: 0.75rem;
-        font-size: 1.1rem;
-        color: #667eea;
-      }
-
-      .contact-text {
-        color: #2c3e50;
-        font-weight: 500;
-
-        a {
-          color: #667eea;
-          text-decoration: none;
-
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-  }
-
-  .social-title {
-    color: #2c3e50;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-
-  .social-links {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background: #f8f9fa;
-    border-radius: 12px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border: 2px solid #e9ecef;
-    font-weight: 700;
-    font-size: 1rem;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    &.linkedin {
-      color: #0077b5;
-      &:hover {
-        background: #0077b5;
-        color: white;
-        border-color: #0077b5;
-      }
-    }
-
-    &.instagram {
-      color: #e4405f;
-      &:hover {
-        background: #e4405f;
-        color: white;
-        border-color: #e4405f;
-      }
-    }
-
-    &.facebook {
-      color: #1877f2;
-      &:hover {
-        background: #1877f2;
-        color: white;
-        border-color: #1877f2;
-      }
-    }
-
-    &.twitter {
-      color: #1da1f2;
-      &:hover {
-        background: #1da1f2;
-        color: white;
-        border-color: #1da1f2;
-      }
-    }
-  }
-
-  .social-labels {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-
-    .social-label {
-      background: #e9ecef;
-      color: #666;
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 500;
-    }
-  }
-`;
-
-const ContactForm = styled.div`
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-
-  h3 {
-    color: #2c3e50;
-    margin-bottom: 1.5rem;
-  }
-
-  .form-group {
-    margin-bottom: 1.5rem;
-  }
+const FormGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 
   label {
-    display: block;
-    margin-bottom: 0.5rem;
+    font-weight: 600;
     color: #2c3e50;
-    font-weight: 500;
+    font-size: 0.95rem;
   }
 
   input, textarea, select {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #e9ecef;
-    border-radius: 8px;
+    padding: 14px 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
     font-size: 1rem;
-    transition: border-color 0.3s ease;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
 
     &:focus {
       outline: none;
       border-color: #667eea;
+      background: white;
+      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    }
+
+    &::placeholder {
+      color: #999;
     }
   }
 
   textarea {
+    min-height: 150px;
     resize: vertical;
-    min-height: 120px;
   }
 
-  .submit-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 25px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: translateY(-2px);
+  @media (max-width: 768px) {
+    input, textarea, select {
+      padding: 12px 16px;
+      font-size: 0.95rem;
     }
   }
 `;
 
+const SubmitButton = styled.button`
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  min-height: 44px;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(-1px);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 14px 28px;
+    font-size: 1rem;
+  }
+`;
+
+const StatusMessage = styled.div`
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-weight: 500;
+  animation: slideIn 0.3s ease;
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  ${props => props.type === 'success' && `
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  `}
+
+  ${props => props.type === 'error' && `
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  `}
+`;
+
+const InfoSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
+
+const InfoCard = styled.div`
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    .icon {
+      font-size: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 12px;
+      color: white;
+    }
+  }
+
+  @media (max-width: 1280px) {
+    padding: 2rem;
+
+    h3 {
+      font-size: 1.35rem;
+
+      .icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.75rem;
+
+    h3 {
+      font-size: 1.25rem;
+
+      .icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+      }
+    }
+  }
+`;
+
+const InfoItem = styled.div`
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .label {
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 0.95rem;
+    min-width: 100px;
+  }
+
+  .value {
+    color: #666;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    flex: 1;
+
+    a {
+      color: #667eea;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #764ba2;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1.25rem;
+
+    .label {
+      min-width: auto;
+      font-size: 0.9rem;
+    }
+
+    .value {
+      font-size: 0.9rem;
+    }
+  }
+`;
+
+const MapSection = styled.div`
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.05);
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 12px;
+  }
+
+  @media (max-width: 1280px) {
+    padding: 2.5rem;
+
+    h2 {
+      font-size: 1.75rem;
+    }
+
+    iframe {
+      height: 450px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    iframe {
+      height: 350px;
+    }
+  }
+`;
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
+    company: '',
     service: '',
     message: ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState('');
+  const [submitStatus, setSubmitStatus] = useState(null);
+  const formRef = useRef(null);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitStatus('');
-    const formDataToSend = new FormData();
-    formDataToSend.append('access_key',  import.meta.env.VITE_WEB3_TOKEN); // Get from web3forms.com
-    formDataToSend.append('name', formData.name);
-    formDataToSend.append('email', formData.email);
-    formDataToSend.append('phone', formData.phone);
-    formDataToSend.append('service', formData.service);
-    formDataToSend.append('message', formData.message);
-    formDataToSend.append('from_name', 'InfraByte IT Solutions Contact Form');
-    formDataToSend.append('subject', `New Inquiry from ${formData.name}`);
+    setSubmitStatus(null);
 
     try {
+      // Prepare form data for Web3Forms
+      const formPayload = {
+        access_key:  import.meta.env.VITE_WEB3_TOKEN, // Replace with your Web3Forms access key
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        service: formData.service || 'Not specified',
+        message: formData.message,
+        form_name: 'InfraByte IT Solutions - Contact Form',
+        subject: `New Contact Request from ${formData.name}`,
+        from_name: 'InfraByte IT Solutions',
+        reply_to: formData.email
+      };
+
+      // Submit to Web3Forms
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: formDataToSend
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formPayload)
       });
 
       const data = await response.json();
 
       if (data.success) {
-        setSubmitStatus('success');
-        setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+        setSubmitStatus({
+          type: 'success',
+          message: 'Thank you! Your message has been sent successfully. We will get back to you within 24 hours.'
+        });
+
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          service: '',
+          message: ''
+        });
+
+        // Clear success message after 5 seconds
+        setTimeout(() => {
+          setSubmitStatus(null);
+        }, 5000);
       } else {
-        setSubmitStatus('error');
+        throw new Error(data.message || 'Form submission failed');
       }
     } catch (error) {
-      console.error('Error:', error);
-      setSubmitStatus('error');
+      console.error('Error submitting form:', error);
+      setSubmitStatus({
+        type: 'error',
+        message: error.message || 'An error occurred while sending your message. Please try again.'
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -342,280 +511,193 @@ const Contact = () => {
 
   return (
     <ContactContainer>
-      <HeroSection>
-        <div className="container">
-          <h1>Contact Us</h1>
-          <p style={{fontSize: '1.2rem', maxWidth: '600px', margin: '1rem auto 0'}}>
+      <Container>
+        <HeroSection>
+          <h1>Get In Touch</h1>
+          <p>
             Get in touch with our experts for comprehensive IT solutions and digital transformation services
           </p>
-        </div>
-      </HeroSection>
+        </HeroSection>
 
-      <div className="container">
-        <ContactGrid>
-          <ContactInfo>
-            <div className="info-card">
-              <div className="info-title">📍 Registered Office</div>
-              <div className="contact-item">
-                <div className="content">
-                  <p><strong>InfraByte IT Solutions</strong></p>
-                  <p>4, Laxman Sawant Chawl, Jai Bhavani Mata Road, Amboli, Andheri (W), Mumbai, Maharashtra - 400 058</p>
-                </div>
-              </div>
-            </div>
+        <ContentGrid>
+          <FormSection>
+            <h2>Send Us a Message</h2>
+            <Form ref={formRef} onSubmit={handleSubmit}>
+              {submitStatus && (
+                <StatusMessage type={submitStatus.type}>
+                  {submitStatus.message}
+                </StatusMessage>
+              )}
 
-            <div className="info-card">
-              <div className="info-title">💼 Communication Address</div>
-              <div className="contact-item">
-                <div className="content">
-                  <p><strong>Business Operations</strong></p>
-                  <p>303, 3rd Floor, Rathod Niwas, Natwar Nagar, Jogeshwari East, Mumbai - 400060</p>
-                </div>
-              </div>
-            </div>
+              <FormRow>
+                <FormGroup>
+                  <label htmlFor="name">Full Name *</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="John Doe"
+                    required
+                    disabled={isSubmitting}
+                  />
+                </FormGroup>
 
-            <div className="info-card">
-              <div className="info-title">📞 Contact Details</div>
-              <div className="contact-item">
+                <FormGroup>
+                  <label htmlFor="email">Email Address *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="john@example.com"
+                    required
+                    disabled={isSubmitting}
+                  />
+                </FormGroup>
+              </FormRow>
+
+              <FormRow>
+                <FormGroup>
+                  <label htmlFor="phone">Phone Number *</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+91 12345 67890"
+                    required
+                    disabled={isSubmitting}
+                  />
+                </FormGroup>
+
+                <FormGroup>
+                  <label htmlFor="company">Company Name</label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    placeholder="Your Company"
+                    disabled={isSubmitting}
+                  />
+                </FormGroup>
+              </FormRow>
+
+              <FormGroup>
+                <label htmlFor="service">Service Interested In</label>
+                <select
+                  id="service"
+                  name="service"
+                  value={formData.service}
+                  onChange={handleChange}
+                  disabled={isSubmitting}
+                >
+                  <option value="">Select a service</option>
+                  <option value="Cloud & DevOps">Cloud & DevOps</option>
+                  <option value="Digital Transformation">Digital Transformation</option>
+                  <option value="Managed Services">Infrastructure Managed Services</option>
+                  <option value="AI Automations">AI Automations</option>
+                  <option value="Cyber Security">Cyber Security</option>
+                  <option value="Data Centre Solutions">Data Centre Solutions</option>
+                  <option value="End User Computing">End User Computing</option>
+                  <option value="Web & Domain Hosting">Web & Domain Hosting</option>
+                  <option value="Custom Software">Custom Software Development</option>
+                  <option value="Enterprise Software">Enterprise Software Solutions</option>
+                  <option value="SaaS Solutions">SaaS Solutions</option>
+                  <option value="Software Support">Software Maintenance & Support</option>
+                  <option value="Other">Other</option>
+                </select>
+              </FormGroup>
+
+              <FormGroup>
+                <label htmlFor="message">Message *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Tell us about your project and requirements..."
+                  required
+                  disabled={isSubmitting}
+                />
+              </FormGroup>
+
+              <SubmitButton type="submit" disabled={isSubmitting}>
+                {isSubmitting ? (
+                  <>
+                    <span>Sending...</span>
+                  </>
+                ) : (
+                  'Send Message'
+                )}
+              </SubmitButton>
+            </Form>
+          </FormSection>
+
+          <InfoSection>
+            <InfoCard>
+              <h3>
+                <span className="icon">📍</span>
+                Our Locations
+              </h3>
+              <InfoItem>
+                <span className="label">Registered Office:</span>
+                <span className="value">
+                  4, Laxman Sawant Chawl, Jai Bhavani Mata Road, Amboli, Andheri (W), Mumbai, Maharashtra - 400 058
+                </span>
+              </InfoItem>
+              <InfoItem>
+                <span className="label">Business Operations:</span>
+                <span className="value">
+                  303, 3rd Floor, Rathod Niwas, Natwar Nagar, Jogeshwari East, Mumbai - 400060
+                </span>
+              </InfoItem>
+            </InfoCard>
+
+            <InfoCard>
+              <h3>
                 <span className="icon">📞</span>
-                <div className="content">
-                  <strong>Phone</strong>
-                  <p>+91 82992 34751</p>
-                  <p>Available: Mon-Sat, 9:00 AM - 7:00 PM</p>
-                </div>
-              </div>
+                Contact Information
+              </h3>
+              <InfoItem>
+                <span className="label">Phone:</span>
+                <span className="value">
+                  <a href="tel:+918299234751">+91 82992 34751</a>
+                </span>
+              </InfoItem>
+              <InfoItem>
+                <span className="label">Available:</span>
+                <span className="value">Mon-Sat, 9:00 AM - 7:00 PM</span>
+              </InfoItem>
+              <InfoItem>
+                <span className="label">Email:</span>
+                <span className="value">
+                  <a href="mailto:contactus@infrabyteitsystem.com">contactus@infrabyteitsystem.com</a>
+                </span>
+              </InfoItem>
+              <InfoItem>
+                <span className="label">Response Time:</span>
+                <span className="value">Within 24 hours</span>
+              </InfoItem>
+            </InfoCard>
+          </InfoSection>
+        </ContentGrid>
 
-              <div className="contact-item">
-                <span className="icon">✉️</span>
-                <div className="content">
-                  <strong>Email</strong>
-                  <p>contactus@infrabyteitsystem.com</p>
-                  <p>Response within 24 hours</p>
-                </div>
-              </div>
-            </div>
-
-            <SocialMediaCard>
-              <div className="find-us-title">
-                <span className="globe-icon">🌐</span>
-                Find Us
-              </div>
-              <div className="get-in-touch">Get in touch</div>
-
-              <div className="contact-section">
-                <div className="contact-item">
-                  <span className="contact-icon">📞</span>
-                  <span className="contact-text">+91 82992 34751</span>
-                </div>
-                <div className="contact-item">
-                  <span className="contact-icon">✉️</span>
-                  <span className="contact-text">
-                    <a href="mailto:contactus@infrabyteitsystem.com">
-                      contactus@infrabyteitsystem.com
-                    </a>
-                  </span>
-                </div>
-              </div>
-
-              <div className="social-title">Social Media Handles</div>
-              <div className="social-links">
-                <a
-                  href="https://www.linkedin.com/company/infrabyte-it-solutions"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-link linkedin"
-                  title="LinkedIn"
-                >
-                  in
-                </a>
-
-                <a
-                  href="https://www.instagram.com/infrabyteitsystem"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-link instagram"
-                  title="Instagram"
-                >
-                  ig
-                </a>
-
-                <a
-                  href="https://www.facebook.com/infrabyteitsystem"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-link facebook"
-                  title="Facebook"
-                >
-                  fb
-                </a>
-
-                <a
-                  href="https://twitter.com/infrabyteitsystem"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-link twitter"
-                  title="X (Twitter)"
-                >
-                  𝕏
-                </a>
-              </div>
-
-              <div className="social-labels">
-                <span className="social-label">LinkedIn</span>
-                <span className="social-label">Instagram</span>
-                <span className="social-label">Facebook</span>
-                <span className="social-label">X</span>
-              </div>
-            </SocialMediaCard>
-          </ContactInfo>
-
-          <ContactForm>
-                  <h3>Send Us a Message</h3>
-
-                  {submitStatus === 'success' && (
-                    <div style={{
-                      background: '#d4edda',
-                      color: '#155724',
-                      padding: '15px',
-                      borderRadius: '8px',
-                      marginBottom: '1rem',
-                      border: '1px solid #c3e6cb',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '10px'
-                    }}>
-                      <span style={{fontSize: '1.2rem'}}>✅</span>
-                      <div>
-                        <strong>Message Sent Successfully!</strong><br />
-                        Thank you for contacting us. We'll respond within 24 hours.
-                      </div>
-                    </div>
-                  )}
-
-                  {submitStatus === 'error' && (
-                    <div style={{
-                      background: '#f8d7da',
-                      color: '#721c24',
-                      padding: '15px',
-                      borderRadius: '8px',
-                      marginBottom: '1rem',
-                      border: '1px solid #f5c6cb',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '10px'
-                    }}>
-                      <span style={{fontSize: '1.2rem'}}>❌</span>
-                      <div>
-                        <strong>Something went wrong!</strong><br />
-                        Please try again or email us directly at <a href="mailto:contactus@infrabyteitsystem.com">contactus@infrabyteitsystem.com</a>
-                      </div>
-                    </div>
-                  )}
-
-                  <form onSubmit={handleSubmit}>
-                    <div className="form-group">
-                      <label htmlFor="name">Full Name *</label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        placeholder="Enter your full name"
-                        disabled={isSubmitting}
-                      />
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="email">Email Address *</label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        placeholder="Enter your email address"
-                        disabled={isSubmitting}
-                      />
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="phone">Phone Number</label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="+91 82992 34751"
-                        disabled={isSubmitting}
-                      />
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="service">Service Interest</label>
-                      <select
-                        id="service"
-                        name="service"
-                        value={formData.service}
-                        onChange={handleChange}
-                        disabled={isSubmitting}
-                      >
-                        <option value="">Select a service</option>
-                        <option value="Cloud & DevOps">Cloud & DevOps</option>
-                        <option value="Cyber Security">Cyber Security</option>
-                        <option value="Digital Transformation">Digital Transformation</option>
-                        <option value="AI Automations">AI Automations</option>
-                        <option value="Web & Domain Hosting">Web & Domain Hosting</option>
-                        <option value="Custom Software Development">Custom Software Development</option>
-                        <option value="Enterprise Software">Enterprise Software</option>
-                        <option value="Other Services">Other Services</option>
-                      </select>
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="message">Message *</label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                        placeholder="Tell us about your project requirements, timeline, and budget..."
-                        disabled={isSubmitting}
-                        rows="5"
-                      ></textarea>
-                    </div>
-
-                    <button type="submit" className="submit-btn" disabled={isSubmitting}>
-                      {isSubmitting ? (
-                        <>
-                          <span style={{marginRight: '8px'}}>⏳</span>
-                          Sending Message...
-                        </>
-                      ) : (
-                        <>
-                          <span style={{marginRight: '8px'}}>📧</span>
-                          Send Message
-                        </>
-                      )}
-                    </button>
-
-                    <p style={{
-                      fontSize: '0.85rem',
-                      color: '#666',
-                      marginTop: '1rem',
-                      textAlign: 'center'
-                    }}>
-                      We respect your privacy. Your information is safe with us.
-                    </p>
-                  </form>
-                </ContactForm>
-
-        </ContactGrid>
-      </div>
+        <MapSection>
+          <h2>Find Us On Map</h2>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.3748745!2d72.8286!3d19.1356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDA4JzA4LjIiTiA3MsKwNDknNDMuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+            allowFullScreen
+            loading="lazy"
+            title="InfraByte IT Solutions Location"
+          ></iframe>
+        </MapSection>
+      </Container>
     </ContactContainer>
   );
 };
