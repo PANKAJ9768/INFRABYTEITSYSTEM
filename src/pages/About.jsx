@@ -318,14 +318,14 @@ const About = () => {
           <div className="hero-content">
             <HeroTitle>Empowering Digital Transformation</HeroTitle>
             <HeroSubtitle>
-              InfraByte IT Solutions is your trusted partner for secure, scalable, and
+              InfraByte IT System is your trusted partner for secure, scalable, and
               cost-effective enterprise IT. We enable organizations to accelerate digital
               outcomes through cloud, security, and automation—backed by 24/7 managed operations.
             </HeroSubtitle>
             <div style={{marginTop: '2rem'}}>
               <img
-                src="/logo.png"
-                alt="InfraByte IT Solutions"
+                src="/public/logo.png"
+                alt="InfraByte IT System"
                 style={{height: '60px', opacity: '0.9'}}
               />
             </div>
@@ -340,7 +340,7 @@ const About = () => {
               <h3>Our Story</h3>
               <p>
                 Founded with a vision to bridge the technology gap for businesses of all sizes,
-                InfraByte IT Solutions has grown from a small startup to a leading IT services
+                InfraByte IT System has grown from a small startup to a leading IT services
                 provider in Mumbai. Our journey began with a simple belief: that every business
                 deserves access to enterprise-grade technology solutions that drive growth and innovation.
               </p>
@@ -522,7 +522,7 @@ const About = () => {
         <div className="container">
           <h2>Ready to Transform Your IT Infrastructure?</h2>
           <p>
-            Join hundreds of satisfied clients who trust InfraByte IT Solutions
+            Join hundreds of satisfied clients who trust InfraByte IT System
             for their technology needs. Let's discuss how we can help accelerate your digital journey.
           </p>
           <div className="cta-buttons">

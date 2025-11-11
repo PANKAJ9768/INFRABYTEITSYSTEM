@@ -187,12 +187,12 @@ const Footer = () => {
       <div className="container">
         <FooterContent>
           <FooterSection>
-            <h4>InfraByte IT Solutions</h4>
+            <h4>InfraByte IT System</h4>
             <p>Leading IT solutions provider delivering comprehensive technology services, software solutions, and digital transformation expertise.</p>
             <div style={{marginTop: '1rem'}}>
               <img
                 src="/logo.png"
-                alt="InfraByte IT Solutions"
+                alt="InfraByte IT System"
                 style={{height: '40px', opacity: '0.8'}}
               />
             </div>
@@ -312,7 +312,7 @@ const Footer = () => {
         </FooterContent>
 
         <Copyright>
-          <p>© {new Date().getFullYear()} InfraByte IT Solutions. All rights reserved. | Empowering businesses through technology.</p>
+          <p>© {new Date().getFullYear()} InfraByte IT System. All rights reserved. | Empowering businesses through technology.</p>
         </Copyright>
       </div>
     </FooterContainer>

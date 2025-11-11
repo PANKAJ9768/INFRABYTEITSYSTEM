@@ -836,7 +836,7 @@ const techStack = [
           <div className="cta-content">
             <h2>Ready to Transform Your Business?</h2>
             <p>
-              Join hundreds of forward-thinking companies who trust InfraByte IT Solutions
+              Join hundreds of forward-thinking companies who trust InfraByte IT System
               for their technology needs. Let's build the future together.
             </p>
             <HeroButtons>

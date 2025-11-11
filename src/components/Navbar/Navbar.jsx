@@ -37,8 +37,12 @@ const Navbar = () => {
     <Nav>
       <NavbarContainer>
         <NavLogo to="/">
-          <span style={{ fontSize: '1.5rem', marginRight: '8px' }}>🚀</span>
-          InfraByte IT Solutions
+          <img
+              src="/logo.png"
+              alt="InfraByte IT System Logo"
+              style={{ height: '70px', width: 'auto', marginRight: '10px' }}
+            />
+          InfraByte IT System
         </NavLogo>
 
         <MobileIcon onClick={toggle} aria-label="Toggle menu">

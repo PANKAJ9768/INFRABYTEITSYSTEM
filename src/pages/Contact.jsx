@@ -459,9 +459,9 @@ const Contact = () => {
         company: formData.company,
         service: formData.service || 'Not specified',
         message: formData.message,
-        form_name: 'InfraByte IT Solutions - Contact Form',
+        form_name: 'InfraByte IT System - Contact Form',
         subject: `New Contact Request from ${formData.name}`,
-        from_name: 'InfraByte IT Solutions',
+        from_name: 'InfraByte IT System',
         reply_to: formData.email
       };
 
@@ -699,7 +699,7 @@ const Contact = () => {
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="InfraByte IT Solutions Location - Jogeshwari, Mumbai">
+            title="InfraByte IT System Location - Jogeshwari, Mumbai">
           </iframe>
         </MapSection>
 
